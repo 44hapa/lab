@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Тестовая программа</title>
+<style type="text/css">
+#world{
+	background-color:#98FB98;
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	float: left;
+}
+#stats{
+	/*float: right;*/
+	right: 10px;
+	top: 10px;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 22px;
+	width: 300px;
+	height: 100px;
+	background-color: #429ef4;
+	position: fixed;
+	opacity: 0.7;
+	border-radius: 12px;
+	margin: auto;
+}
+#players {
+	margin: 15px;
+}
+#playersCountSubmit {
+	float: right;
+}
+#comment{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 25px;
+	width: 300px;
+	height: 100px;
+	background-color: #EE2C2C;
+	position: fixed;
+	top: 50%;
+	left: 30%;
+	opacity: 0.5;
+	border-radius: 12px;
+	display: none;
+}
+#textComment {
+	text-align: center;
+	margin: 35px;
+	display: block;
+}
+
+.road,.woll,.river,.woll2,.road2,.road3,.dor{
+	background-color: #FFFFFF;
+	position: relative;
+	float: left;
+	border: 1px solid #000000;
+	background-image: url(img/grass6.png);
+	border-radius: 7px;
+}
+.woll{
+	background-image: url(img/woll1.png);
+}
+.woll2{
+	background-image: url(img/woll2.png);
+}
+.dor{
+	background-image: url(img/dor1.png);
+}
+.road2{
+	background-image: url(img/grass5.png);
+}
+.road3{
+	background-image: url(img/grass3.png);
+}
+.river{
+	background-image: url(img/river1.png);
+}
+.stuff,.mans,.gold,.medic,.dragon {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+}
+.mans {
+	background-image:url(img/fea2.png);
+	opacity: 0.4;
+	/*mix-blend-mode: color-burn;*/
+	background-color: white;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 50px;
+	text-align: center;
+}
+.medic {
+	background-image:url(img/medic.png);
+	border: 1px solid #000000;
+	border-radius: 7px;
+}
+.gold {
+	background-image:url(img/gold1.png);
+}
+.dragon {
+	background-image:url(img/dragon2.png);
+}
+
+</style>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/game.js"></script>
+<script src="maps/map1.js"></script>
+
+<script type="text/javascript">
+$( document ).ready(function() {	
+	console.log( "document loaded" );
+
+	start();
+
+	colorize(woll, "woll");
+	colorize(river, "river");
+	colorize(mans, "mans");
+
+	determineСountPerson();
+	createMeans();
+	createStuff();
+	createDoar();
+	createDragon();
+});
+
+</script>
+
+</head>
+<body>
+
+<div id="world"></div>
+<div id="stats">
+	<form name="players" id="players">
+		<input id="playersCount" type="range" min="2" max="6" name="playersCount" value="2" />
+		<div id="slidernumber">Будет играть 2 чел.</div>
+		<input type="button" id="playersCountSubmit" value="OK" />
+	</form>
+</div>
+<div id="comment"><p id="textComment">asdasd</p></div>
+
+</body>
+</html>
