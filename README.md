@@ -1,0 +1,2 @@
+# lab
+Labirint - simple game
